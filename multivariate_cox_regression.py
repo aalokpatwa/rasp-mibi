@@ -10,7 +10,9 @@ CSV_PATH = "" #put path to csv summarizing cluster features, clinical variables,
 df = pd.read_csv(CSV_PATH, index_col="ID")
 
 #define which cluster feature to examine
-cluster_choice = "" #options: [coexpression_cluster, functional_proteins_cluster, immunoregulatory_protein_cluster]
+#options: [coexpression_cluster, functional_proteins_cluster, immunoregulatory_protein_cluster]
+#can either examine each one-at-a-time or iterate through them
+cluster_choice = "" 
 
 #manipulate the architecture distinction the variable which is originally dtype: str into a quantitative categorical variable
 df["Architecture"] = df["Architecture"].astype("category").cat.codes
