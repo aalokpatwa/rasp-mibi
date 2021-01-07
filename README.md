@@ -61,7 +61,7 @@ Purpose: determine whether the expression of functional proteins is associated w
 Output: two results CSVs in results/.
 
 ### 5: Protein Co-expression
-`python3 calculate_coexpression.py`
+`python3 calculate_coexpression.py`\
 Purpose: Calculate instances of co-expression between proteins.\
 Output: intermediate_data/created_coexpression_matrices/. The reader can compare this output to coexpression_matrices/ to ensure reproducibility.\
 Estimated time: 10 minutes. 
