@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 #Calculating Shapley values
 
 #Provide the path to the csv with the multivariate data
-CSV_PATH = ""
+CSV_PATH = "intermediate_data/covariate_rsf_data.csv"
 
 #Import CSV into a dataframe
 data = pd.read_csv(CSV_PATH, index_col="ID")
