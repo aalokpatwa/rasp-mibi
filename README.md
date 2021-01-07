@@ -34,7 +34,7 @@ To install the required packages, you can download the required packages individ
 or, alternatively, use the requirements.txt file: 
 `pip3 install -r requirements.txt`  
 
-Download the repository as a whole to run the demos.
+Download the repository as a whole to run the demos. Install time should be less than 10 minutes.
 
 ## Demo
 ### 1: Data Collection
