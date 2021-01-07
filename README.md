@@ -27,10 +27,10 @@ This code was dveloped in the following settings.
 * shap (0.37.0)
 
 ## Installation
-To install the required packages, you can download the required packages individually using:
-`pip3 install package_name`
-or, alternatively, use the requirements.txt file:
-`pip3 install -r requirements.txt`
+To install the required packages, you can download the required packages individually using: 
+`pip3 install package_name`  
+or, alternatively, use the requirements.txt file: 
+`pip3 install -r requirements.txt`  
 
 Download the repository as a whole to run the demos.
 
