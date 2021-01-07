@@ -40,6 +40,8 @@ shap_values = explainer.shap_values(X)
 #Plot the Shapley values as a bar plot
 fig = shap.summary_plot(shap_values, features=X, plot_type='bar')
 
+plt.savefig("results/importance_plot.png", dpi=300)
+
 #--------------------------------------------------------------------
 #Evaluating model performance
 
