@@ -13,7 +13,7 @@ import seaborn
 from itertools import combinations
 from itertools import product
 
-'''
+
 celltype_dir = "rawdata/TNBCcelltypes/"
 marker_dir = "rawdata/MIBITIFF/"
 marker_frames = "rawdata/proteins_by_frame.csv"
@@ -92,7 +92,6 @@ for patient in os.listdir(celltype_dir):
 
 final_vector = expression_vector / total_pixels
 
-'''
 
 
 #Binarize the matrices according to the threshold calculated across all the images.
