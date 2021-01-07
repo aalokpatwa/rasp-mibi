@@ -1,7 +1,7 @@
 # rasp-mibi: Recurrence And Survival Prediction via Multiplexed Ion Beam Imaging
 This repository contains the code for the article, "Multiplexed Analysis of the Tumor-Immune Microenvironment Reveals Predictors of Outcome in Triple-Negative Breast Cancer"
 
-![Figure 1: Analysis Flow](./Figure 1.png)
+![Figure 1: Analysis Flow](https://github.com/aalokpatwa/mibi-rasp/blob/main/Figure%201.png)
 
 ## Software Requirements
 This code was dveloped in the following settings.
