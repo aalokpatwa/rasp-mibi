@@ -1,33 +1,13 @@
 from scipy.spatial import Delaunay, delaunay_plot_2d, Voronoi, voronoi_plot_2d
-import lifelines
 import matplotlib.pyplot as plt
 import numpy as np
-import sklearn
-import glob, os
+import os
 import pandas as pd
 from PIL import Image, ImageDraw
-from scipy.stats import ttest_ind
-import scipy
 from scipy.cluster.hierarchy import fcluster
-from lifelines import KaplanMeierFitter
-from lifelines.statistics import logrank_test
-import cv2
-import skimage
-from sklearn.svm import SVC
-from sklearn.model_selection import train_test_split
-from sklearn.model_selection import GridSearchCV
-from sklearn.manifold import TSNE
-from sklearn.cluster import DBSCAN
-import time
 import seaborn
 from itertools import combinations
 from itertools import product
-import networkx as nx
-import json
-import karateclub
-import pickle
-import keras
-import random
 
 def create_voronoi(centdf): #returns the Voronoi diagram object
     vor = Voronoi(np.c_[centdf.column.values, centdf.row.values])
@@ -127,16 +107,16 @@ def create_neighbor_matrix(voronoi, voronoi_df):
     return new_df
 
 
-# Iterate through the ridge points because they define a certain combination
-# Find the indices of the cells that the border indicates
-# Find their Binary Expression matrix using the within_cell_binary_median
-# Find the possible combinations from two distinct sets, and then add one to each of the corresponding selections.
+#-------------------------------------------------------
+# Calculate interactions of each type per image
 
-#IMPORTANT - THE PURPOSE OF THIS CELL IS TO USE NON VORONOI MARKER EXPRESSION TO RUN THIS
 
-binary_infopath = "/Users/aalokpatwa/Desktop/MIBI/nonvoronoi/marker_expression/cellsize_binary_background/"
-centroid_path = "/Users/aalokpatwa/Desktop/MIBI/centroids/"
-biomarker_frames = pd.read_csv("/Users/aalokpatwa/Desktop/MIBI/biomarker_frames.csv")
+
+#
+
+binary_infopath = "intermediate_data/protein_positivity/"
+centroid_path = "intermediate_data/centroids/"
+biomarker_frames = pd.read_csv("rawdata/proteins_by_frame.csv")
 
 biom_columns = biomarker_frames["Biomarker"].values
 
@@ -149,15 +129,16 @@ for patient in os.listdir(binary_infopath):
     biom_df = pd.read_csv(binary_infopath + patient)
     vor = create_voronoi(centroid_df)
     edges = vor.ridge_points
+    # Iterate through the ridge points because they define a certain combination
     for edge in edges:
+        # Find the indices of the cells that the edge separates
         first_centroid = int(edge[0])
         second_centroid = int(edge[1])
         
+        # Find their expression
         first_cell = biom_df.loc[[first_centroid]]
         second_cell = biom_df.loc[[second_centroid]]
-        
-            
-        
+    
         first_pos = []
         second_pos = []
         for column in first_cell.columns[3:]:
@@ -165,6 +146,8 @@ for patient in os.listdir(binary_infopath):
                 first_pos.append(int(column))
             if second_cell[column].values[0] == 1:
                 second_pos.append(int(column))
+        
+        #Cartesian product of the proteins that each cell in the adjacency are positive for
         combinations = product(first_pos, second_pos)
         for comb in combinations:
             first_marker = comb[0]
@@ -174,4 +157,10 @@ for patient in os.listdir(binary_infopath):
                 com[second_marker, first_marker] += 1
     com_df = pd.DataFrame(com, columns=biom_columns)
     com_df.set_index(pd.Index(biom_columns), inplace=True)
-    com_df.to_csv("/Users/aalokpatwa/Desktop/MIBI/voronoi/marker_cooccurrence/biom_com/cellsize_nonvoronoi_background/" + patient)
+    com_df.to_csv("intermediate_data/created_interaction_matrices/" + patient)
+
+
+
+#-------------------------------------------------------
+# Calculate interactions of each type per image
+

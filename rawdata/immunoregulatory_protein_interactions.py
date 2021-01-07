@@ -15,7 +15,7 @@ clinical_path = "rawdata/clinical_data.csv"
 clinical_df = pd.read_csv(clinical_path, index_col=["ID"])
 
 #Path to interaction matrices
-matrices_path = "intermediate_data/functional_protein_interaction_matrices/"
+matrices_path = "intermediate_data/interaction_matrices/"
 
 # Out of all proteins, only include the functional proteins
 markers_to_include = [27, 31, 37, 38]
@@ -74,7 +74,6 @@ features_df = pd.DataFrame(feature_list, columns=columns)
 
 #Obtain a versino of this dataframe with only the features.
 data_only = features_df.drop(columns=["Recurrence_time", "Recurrence", "ID"])
-data_only["Duplicate"] = data_only[feature_name]
 data_only.set_index(features_df["ID"], inplace=True)
 
 #Create the dendrogram.
@@ -166,7 +165,7 @@ clinical_path = "rawdata/clinical_data.csv"
 clinical_df = pd.read_csv(clinical_path, index_col=["ID"])
 
 #Path to interaction matrices
-matrices_path = "intermediate_data/functional_protein_interaction_matrices/"
+matrices_path = "intermediate_data/interaction_matrices/"
 
 # Out of all proteins, only include the functional proteins
 markers_to_include = [27, 31, 37, 38]
@@ -226,7 +225,6 @@ features_df = pd.DataFrame(feature_list, columns=columns)
 
 #Obtain a versino of this dataframe with only the features.
 data_only = features_df.drop(columns=["Survival", "Survival_time", "ID"])
-data_only["Duplicate"] = data_only[feature_name]
 data_only.set_index(features_df["ID"], inplace=True)
 
 #Create the dendrogram.

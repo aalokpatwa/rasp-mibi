@@ -15,7 +15,7 @@ clinical_path = "rawdata/clinical_data.csv"
 clinical_df = pd.read_csv(clinical_path, index_col=["ID"])
 
 #Path to interaction matrices
-matrices_path = "intermediate_data/functional_protein_interaction_matrices/"
+matrices_path = "intermediate_data/interaction_matrices/"
 
 # Out of all proteins, only include the functional proteins
 markers_to_include = [2,6,14,16,22,23,24,25,26,27,28,29,30,31,35,37,38,39]
@@ -166,7 +166,7 @@ clinical_path = "rawdata/clinical_data.csv"
 clinical_df = pd.read_csv(clinical_path, index_col=["ID"])
 
 #Path to interaction matrices
-matrices_path = "intermediate_data/functional_protein_interaction_matrices/"
+matrices_path = "intermediate_data/interaction_matrices/"
 
 # Out of all proteins, only include the functional proteins
 markers_to_include = [2,6,14,16,22,23,24,25,26,27,28,29,30,31,35,37,38,39]
