@@ -15,7 +15,7 @@ clinical_path = "rawdata/clinical_data.csv"
 clinical_df = pd.read_csv(clinical_path, index_col=["ID"])
 
 #Path to interaction matrices
-matrices_path = "intermediate_data/coexpression_matrices/"
+matrices_path = "intermediate_data/functional_protein_interaction_matrices/"
 
 # Out of all proteins, only include the functional proteins
 markers_to_include = [2,6,14,16,22,23,24,25,26,27,28,29,30,31,35,37,38,39]
@@ -45,9 +45,9 @@ for patient_index in range(len(os.listdir(matrices_path))):
 
     #Flatten the co-occurrence matrix into a feature vector.
     #Cannot simply run np.flatten because the matrix is symmetrical - I only want the top-right triangle
-    #But, we don't want to include the diagonal
+    #But, have to include the diagonal as well.
     for row in range(np_glcm.shape[0]):
-        for column in range(row+1, np_glcm.shape[1]):
+        for column in range(row, np_glcm.shape[1]):
             if row in markers_to_include and column in markers_to_include:
                 if patient_index == 0:
                     feature_name = current_patient_glcm.index[row] + " " + current_patient_glcm.columns[column]
@@ -70,16 +70,15 @@ columns.append("Recurrence_time")
 columns.append("ID")
 
 #Create a dataframe using the features, the recurrence events, and the time taken to recur.
-
 features_df = pd.DataFrame(feature_list, columns=columns)
 
 #Obtain a versino of this dataframe with only the features.
 data_only = features_df.drop(columns=["Recurrence_time", "Recurrence", "ID"])
-data_only["Duplicate"] = features_df[feature_name]
+data_only["Duplicate"] = data_only[feature_name]
 data_only.set_index(features_df["ID"], inplace=True)
 
 #Create the dendrogram.
-clustergram = seaborn.clustermap(data_only, method="weighted",
+clustergram = seaborn.clustermap(data_only, method="complete",
                             metric="braycurtis", standard_scale = 1, cmap="viridis", figsize=(10,8), cbar_pos=None)
 
 plt.close()
@@ -152,7 +151,7 @@ plt.yticks(fontsize=15)
 plt.ylim(0,1)
 plt.tight_layout()
 
-plt.savefig("results/coexpression_km_recurrence.png", dpi=300)
+plt.savefig("results/functional_interactions_km_recurrence.png", dpi=300)
 plt.close()
 
 
@@ -167,7 +166,7 @@ clinical_path = "rawdata/clinical_data.csv"
 clinical_df = pd.read_csv(clinical_path, index_col=["ID"])
 
 #Path to interaction matrices
-matrices_path = "intermediate_data/coexpression_matrices/"
+matrices_path = "intermediate_data/functional_protein_interaction_matrices/"
 
 # Out of all proteins, only include the functional proteins
 markers_to_include = [2,6,14,16,22,23,24,25,26,27,28,29,30,31,35,37,38,39]
@@ -199,7 +198,7 @@ for patient_index in range(len(os.listdir(matrices_path))):
     #Cannot simply run np.flatten because the matrix is symmetrical - I only want the top-right triangle
     #But, have to include the diagonal as well.
     for row in range(np_glcm.shape[0]):
-        for column in range(row+1, np_glcm.shape[1]):
+        for column in range(row, np_glcm.shape[1]):
             if row in markers_to_include and column in markers_to_include:
                 if patient_index == 0:
                     feature_name = current_patient_glcm.index[row] + " " + current_patient_glcm.columns[column]
@@ -227,12 +226,12 @@ features_df = pd.DataFrame(feature_list, columns=columns)
 
 #Obtain a versino of this dataframe with only the features.
 data_only = features_df.drop(columns=["Survival", "Survival_time", "ID"])
-data_only["Duplicate"] = features_df[feature_name]
+data_only["Duplicate"] = data_only[feature_name]
 data_only.set_index(features_df["ID"], inplace=True)
 
 #Create the dendrogram.
-clustergram = seaborn.clustermap(data_only, method="weighted",
-                            metric="cosine", standard_scale = 1, cmap="viridis", figsize=(10,8), cbar_pos=None)
+clustergram = seaborn.clustermap(data_only, method="complete",
+                            metric="braycurtis", standard_scale = 1, cmap="viridis", figsize=(10,8), cbar_pos=None)
 
 plt.close()
 
@@ -304,5 +303,5 @@ plt.yticks(fontsize=15)
 plt.ylim(0,1)
 plt.tight_layout()
 
-plt.savefig("results/coexpression_km_survival.png", dpi=300)
+plt.savefig("results/functional_interactions_km_survival.png", dpi=300)
 plt.close()
