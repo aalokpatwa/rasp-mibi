@@ -4,7 +4,7 @@ This repository contains the code for the article, "Multiplexed Analysis of the 
 ![Figure 1: Analysis Flow](https://github.com/aalokpatwa/mibi-rasp/blob/main/Figure%201.png)
 
 ## Software Requirements
-This code was dveloped in the following settings.
+This code was developed in the following settings.
 
 ### OS
 * MacOS 10.14.6
