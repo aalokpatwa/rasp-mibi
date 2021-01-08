@@ -37,11 +37,11 @@ or, alternatively, use the requirements.txt file:
 Download the repository as a whole to run the demos. Install time should be less than 10 minutes.
 
 ## Demo
-### 1: Data Collection
+### Data Collection
 Images can be downloaded from: https://www.angelolab.com/mibi-data.  
 Only step 2 requires these images directly--all other parts of analysis can be run without it, as intermediate data is provided.
 
-### 2: Preliminary Features
+### Preliminary Features
 **Note**: this step requires the original image dataset in order to be run. If the reviewer chooses to download the images, please edit the paths in the code.\
 `python3 calculate_cell_prevalence.py`  \
 **Purpose**: calculate the proportion of cells of each cell type in each patient's image.\
@@ -51,17 +51,17 @@ Only step 2 requires these images directly--all other parts of analysis can be r
 **Purpose**: Calculate protein expression in each cell of each patient's image and assign positivity to each cell based on a threshold.\
 **Output**: CSVs of expression levels in the intermediate_data/protein_expression/ folder and positivity assignments in intermediate_data/created_protein_positivity/  
 
-### 3: Immune Composition
+### Immune Composition
 `python3 immune_composition.py`\
 **Purpose**: determine whether immune composition is associated with recurrence or survival.\
 **Ouput**: two results CSVs in results/.
 
-### 4: Protein Expression
+### Protein Expression
 `python3 protein_expression.py`\
 **Purpose**: determine whether the expression of functional proteins is associated with recurrence or survival.\
 **Output**: two results CSVs in results/.
 
-### 5: Protein Co-expression
+### Protein Co-expression
 `python3 calculate_coexpression.py`\
 **Purpose**: Calculate instances of co-expression between proteins.\
 **Output**: intermediate_data/created_coexpression_matrices/. The reader can compare this output to coexpression_matrices/ to ensure reproducibility.\
@@ -71,7 +71,7 @@ Only step 2 requires these images directly--all other parts of analysis can be r
 **Purpose**: determine whether protein co-expression patterns are predictors of recurrence and survival.\
 **Output**: two KM curves with log-rank test p-value in results/.
 
-### 6: Cell-to-cell Interactions
+### Cell-to-cell Interactions
 `python3 voronoi_interactions.py`\
 **Purpose**: calculate cell-to-cell interactions using Voronoi diagrams.\
 **Output**: interaction matrices in intermediate_data/created_interaction_matrices. The reader can compare this output to interaction_matrices/ to ensure reproducibility.  \
@@ -85,7 +85,7 @@ Only step 2 requires these images directly--all other parts of analysis can be r
 **Purpose**: determine whether interactions involving immunoregulatory proteins are predictors of recurrence and survival.\
 **Output**: two KM curves with log-rank test p-value in results/. 
 
-### 7: Multivariate Analysis
+### Multivariate Analysis
 `python3 multivariate_cox_regression.py`\
 **Purpose**: perform multivariate Cox regression.\
 **Demo Note**: the reader should change the type of cluster to be examined based on the options given in the comments.\
