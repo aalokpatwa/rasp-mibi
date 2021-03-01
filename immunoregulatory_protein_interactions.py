@@ -10,7 +10,7 @@ import seaborn
 #*-------------------------------
 #Recurrence
 
-#Path to the clinical data about recurrence. 
+#Path to the clinical data. 
 clinical_path = "rawdata/clinical_data.csv"
 clinical_df = pd.read_csv(clinical_path, index_col=["ID"])
 
@@ -160,7 +160,7 @@ plt.close()
 #*-------------------------------
 #Survival
 
-#Path to the clinical data about recurrence. 
+#Path to the clinical data. 
 clinical_path = "rawdata/clinical_data.csv"
 clinical_df = pd.read_csv(clinical_path, index_col=["ID"])
 
@@ -204,7 +204,7 @@ for patient_index in range(len(os.listdir(matrices_path))):
                     columns.append(feature_name)
                 patient_features.append(np_glcm[row][column])
 
-    #Find the recurrence outcome of this current patient and how long it took for them to recur
+    #Find the survival outcome of this current patient and how long it took for them to recur
     #Add these values to the feature list for eventual use in the Kaplan-Meier plot.
     try:
         patient_features.append(clinical_df.at[int(identifier), "Survival"])
@@ -219,7 +219,7 @@ columns.append("Survival")
 columns.append("Survival_time")
 columns.append("ID")
 
-#Create a dataframe using the features, the recurrence events, and the time taken to recur.
+#Create a dataframe using the features, the survival events, and the time taken to recur.
 
 features_df = pd.DataFrame(feature_list, columns=columns)
 
