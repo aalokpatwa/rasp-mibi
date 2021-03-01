@@ -76,7 +76,7 @@ Only step 2 requires these images directly--all other parts of analysis can be r
 `python3 voronoi_interactions.py`\
 **Purpose**: calculate cell-to-cell interactions using Voronoi diagrams.\
 **Output**: interaction matrices in intermediate_data/created_interaction_matrices. The reader can compare this output to interaction_matrices/ to ensure reproducibility.  \
-*Estimated time*: 40 minutes.
+**Estimated time**: 40 minutes.
 
 `python3 functional_protein_interactions.py`\
 **Purpose**: determine whether interactions involving functional proteins are predictors of recurrence and survival.\
