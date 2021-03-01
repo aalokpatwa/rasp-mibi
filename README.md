@@ -1,5 +1,6 @@
 # rasp-mibi: Recurrence And Survival Prediction via Multiplexed Ion Beam Imaging
-This repository contains the code for the article, "Multiplexed Imaging Analysis of the Tumor-Immune Microenvironment Reveals Predictors of Outcome in Triple-Negative Breast Cancer"
+This repository contains the code for the article, "Multiplexed Imaging Analysis of the Tumor-Immune Microenvironment Reveals Predictors of Outcome in Triple-Negative Breast Cancer."   
+Pre-print available [here.](https://www.biorxiv.org/content/10.1101/2021.01.06.425496v1)
 
 ![Figure 1: Analysis Flow](https://github.com/aalokpatwa/mibi-rasp/blob/main/Figure%201.png)
 
@@ -75,13 +76,13 @@ Only step 2 requires these images directly--all other parts of analysis can be r
 `python3 voronoi_interactions.py`\
 **Purpose**: calculate cell-to-cell interactions using Voronoi diagrams.\
 **Output**: interaction matrices in intermediate_data/created_interaction_matrices. The reader can compare this output to interaction_matrices/ to ensure reproducibility.  \
-*Estimated time*: 40 minutes.
+**Estimated time**: 40 minutes.
 
 `python3 functional_protein_interactions.py`\
 **Purpose**: determine whether interactions involving functional proteins are predictors of recurrence and survival.\
 **Output**: two KM curves with log-rank test p-value in results/.  
 
-`python3 functional_protein_interactions.py`\
+`python3 immunoregulatory_protein_interactions.py`\
 **Purpose**: determine whether interactions involving immunoregulatory proteins are predictors of recurrence and survival.\
 **Output**: two KM curves with log-rank test p-value in results/. 
 
@@ -98,4 +99,4 @@ Only step 2 requires these images directly--all other parts of analysis can be r
 
 ## Citation
 Multiplexed Imaging Analysis of the Tumor-Immune Microenvironment Reveals Predictors of Outcome in Triple-Negative Breast Cancer.  \
-Aalok Patwa, Rikiya Yamashita, Jin Long, Michael Angelo, Leeat Keren, Daniel Rubin \
+Aalok Patwa, Rikiya Yamashita, Jin Long, Michael Angelo, Leeat Keren, Daniel Rubin
