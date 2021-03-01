@@ -38,6 +38,10 @@ or, alternatively, use the requirements.txt file:
 Download the repository as a whole to run the demos. Install time should be less than 10 minutes.
 
 ## Demo
+
+**NOTE**  
+All of the below steps are included in one Jupyter notebook included in this repository. Updated as of 03/01/2021.
+
 ### Data Collection
 Images can be downloaded from: https://www.angelolab.com/mibi-data.  
 Only step 2 requires these images directly--all other parts of analysis can be run without it, as intermediate data is provided.
