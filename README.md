@@ -82,7 +82,7 @@ Only step 2 requires these images directly--all other parts of analysis can be r
 **Purpose**: determine whether interactions involving functional proteins are predictors of recurrence and survival.\
 **Output**: two KM curves with log-rank test p-value in results/.  
 
-`python3 functional_protein_interactions.py`\
+`python3 immunoregulatory_protein_interactions.py`\
 **Purpose**: determine whether interactions involving immunoregulatory proteins are predictors of recurrence and survival.\
 **Output**: two KM curves with log-rank test p-value in results/. 
 
