@@ -37,10 +37,12 @@ or, alternatively, use the requirements.txt file:
 
 Download the repository as a whole to run the demos. Install time should be less than 10 minutes.
 
-## Demo
+## Pipeline
 
-**NOTE**  
-All of the below steps are included in one Jupyter notebook included in this repository. Updated as of 03/01/2021.
+All of the below steps are included in one Jupyter notebook included in this repository.
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/aalokpatwa/rasp-mibi/main?filepath=https%3A%2F%2Fgithub.com%2Faalokpatwa%2Frasp-mibi%2Fblob%2Fmain%2Frasp_mibi_pipeline.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/aalokpatwa/rasp-mibi/blob/main/rasp_mibi_pipeline.ipynb)
+
 
 ### Data Collection
 Images can be downloaded from: https://www.angelolab.com/mibi-data.  
