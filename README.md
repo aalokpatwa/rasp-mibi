@@ -39,9 +39,10 @@ Download the repository as a whole to run the demos. Install time should be less
 
 ## Pipeline
 
-All of the below steps are included in one Jupyter notebook included in this repository.
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/aalokpatwa/rasp-mibi/main?filepath=https%3A%2F%2Fgithub.com%2Faalokpatwa%2Frasp-mibi%2Fblob%2Fmain%2Frasp_mibi_pipeline.ipynb)
+The computational pipeline built for this study is included as rasp_mibi_pipeline.pynb. It can be run to reproduce results or played with to see how results change. It can also be launched interactively with Colab or Binder.
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/aalokpatwa/rasp-mibi/blob/main/rasp_mibi_pipeline.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/aalokpatwa/rasp-mibi/main?filepath=https%3A%2F%2Fgithub.com%2Faalokpatwa%2Frasp-mibi%2Fblob%2Fmain%2Frasp_mibi_pipeline.ipynb)
+
 
 
 ### Data Collection
