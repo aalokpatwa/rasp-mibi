@@ -1,4 +1,7 @@
 # rasp-mibi: Recurrence And Survival Prediction via Multiplexed Ion Beam Imaging
+RASP-MIBI:
+[![DOI](https://zenodo.org/badge/318369650.svg)](https://zenodo.org/badge/latestdoi/318369650)
+
 This repository contains the code for the article, "Multiplexed Imaging Analysis of the Tumor-Immune Microenvironment Reveals Predictors of Outcome in Triple-Negative Breast Cancer."   
 Pre-print available [here.](https://www.biorxiv.org/content/10.1101/2021.01.06.425496v1)
 
