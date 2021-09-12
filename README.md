@@ -3,7 +3,7 @@ RASP-MIBI:
 [![DOI](https://zenodo.org/badge/318369650.svg)](https://zenodo.org/badge/latestdoi/318369650)
 
 This repository contains the code for the article, "Multiplexed Imaging Analysis of the Tumor-Immune Microenvironment Reveals Predictors of Outcome in Triple-Negative Breast Cancer."   
-Pre-print available [here.](https://www.biorxiv.org/content/10.1101/2021.01.06.425496v1)
+Published in Nature Communications Biology [here.](https://www.nature.com/articles/s42003-021-02361-1)
 
 ![Figure 1: Analysis Flow](https://github.com/aalokpatwa/mibi-rasp/blob/main/Figure%201.png)
 
